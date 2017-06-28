@@ -1,0 +1,28 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bourbon-neat/app/assets/stylesheets/neat";
+@import "./mixins/mixins";
+@mixin box-list() {
+  padding-left: 0px;
+  li {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #efefef;
+    border: 1px solid #dadada;
+    color: #666;
+  }
+}
+body {
+  font-family: $lucida-grande;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button {
+  @include primary-button();
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,25 @@
+@mixin primary-button() {
+  border: 0;
+  background: #2d0244;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: white;
+  padding: 7.5px 10px;
+
+  &:hover, &:active, &:focus {
+    background: white;
+    color: #2d0244;
+  }
+}
+
+@mixin default-button() {
+  border: 0;
+  background: transparent;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 7.5px 10px;
+
+  &:hover, &:active, &:focus {
+    color: rgba(#2d0244, 0.2);
+  }
+}
