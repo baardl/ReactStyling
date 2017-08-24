@@ -5,6 +5,7 @@ import { selectProcessSubset, fetchProcessesIfNeeded,invalidateProcessSubset } f
 import Picker from '../components/Picker'
 import ProcessList from './ProcessList'
 import ProcessPage from './SingleProcessPage'
+import {Route} from 'react-router-dom'
 
 class ProcessSelector extends Component {
   static propTypes = {
@@ -45,6 +46,9 @@ class ProcessSelector extends Component {
         const isEmpty = processes.length === 0
         return (
             <div>
+
+
+
               <Picker value={selectedProcessSubset}
                       onChange={this.handleChange}
                       options={[ 'all', 'mine', 'recommended to me' ]} />
@@ -64,17 +68,26 @@ class ProcessSelector extends Component {
                 {isEmpty
                     ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
                     : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                        <table><tr><td width="70%">
+
                       <ProcessList processes={processes} />
-                        </td><td width="30%">
-                            <ProcessPage process={processes[0]}/>
-                        </td></tr></table>
+                        {/*<MyRoute/>*/}
+                            <Route path="/processes/:processId"
+                                   render={(props) => <ProcessPage {...props} processes={processes} />}
+
+                            />
+                            {/*<Route path="/processes" render={() => hi} />*/}
+
                     </div>
                 }
+
             </div>
         )
     }
 }
+
+const MyRoute = () => (
+    <Route path="/processes/:processId" component={ProcessPage}/>
+)
 
 const mapStateToProps = state => {
     const { selectedProcessSubset, processesBySubset } = state
