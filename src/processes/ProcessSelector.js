@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-//import { selectReddit, fetchPostsIfNeeded, invalidateReddit, selectProcessSubset, fetchProcessesIfNeeded,invalidateProcessSubset } from '../actions'
 import { selectProcessSubset, fetchProcessesIfNeeded,invalidateProcessSubset } from '../actions/index'
 import Picker from '../components/Picker'
-// import Posts from '../components/Posts'
-import Processes from './ProcessList'
+import ProcessList from './ProcessList'
+import ProcessPage from './SingleProcessPage'
 
 class ProcessSelector extends Component {
   static propTypes = {
@@ -65,7 +64,11 @@ class ProcessSelector extends Component {
                 {isEmpty
                     ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
                     : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                      <Processes processes={processes} />
+                        <table><tr><td width="70%">
+                      <ProcessList processes={processes} />
+                        </td><td width="30%">
+                            <ProcessPage process={processes[0]}/>
+                        </td></tr></table>
                     </div>
                 }
             </div>
