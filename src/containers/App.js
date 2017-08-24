@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Route, Link } from 'react-router-dom';
 import Home from './HomePage';
-import Processes from './ProcessSelector';
+import Processes from '../processes/ProcessSelector';
 
 const App = () => (
     <HashRouter>

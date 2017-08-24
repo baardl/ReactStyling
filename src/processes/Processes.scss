@@ -1,6 +1,6 @@
-@import '../styles/main.scss';
+@import '../styles/main';
 
-.Processes {
+.ProcessList {
   //@include span-columns(6);
   @include box-list();
 }

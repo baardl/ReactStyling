@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'react-router-dom'
+import ProcessListRow from './ProcessListRow'
 
 import styles from './Processes.scss';
 const Processes = ({processes}) => (
 //<pre>{JSON.stringify(processes)}</pre>
 
-  <ul className="Processes">
+
+  <ul className="ProcessesList">
      {processes.map((process, i) =>
-       <li key={i}>{process.name}, {process.description}</li>
+         <ProcessListRow key={i} process={process}/>
      )}
   </ul>
 )

@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 //import { selectReddit, fetchPostsIfNeeded, invalidateReddit, selectProcessSubset, fetchProcessesIfNeeded,invalidateProcessSubset } from '../actions'
-import { selectProcessSubset, fetchProcessesIfNeeded,invalidateProcessSubset } from '../actions'
+import { selectProcessSubset, fetchProcessesIfNeeded,invalidateProcessSubset } from '../actions/index'
 import Picker from '../components/Picker'
 // import Posts from '../components/Posts'
-import Processes from '../components/Processes'
+import Processes from './ProcessList'
 
 class ProcessSelector extends Component {
   static propTypes = {
