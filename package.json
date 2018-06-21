@@ -7,7 +7,9 @@
     "dev": "webpack-dev-server --content-base ./ --port 9966 --hot",
     "lint": "node_modules/.bin/eslint ./src --fix",
     "prod": "webpack -p",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Bård Lind",
   "license": "ISC",
@@ -27,7 +29,8 @@
     "redux-form": "^6.7.0",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.2.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -53,5 +56,6 @@
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.4.5",
     "webpack-uglify-js-plugin": "^1.1.9"
-  }
+  },
+  "snyk": true
 }
